@@ -1,0 +1,1 @@
+obj-$(CONFIG_LCDC_RK30) += lcdc/rk30_lcdc.o 
