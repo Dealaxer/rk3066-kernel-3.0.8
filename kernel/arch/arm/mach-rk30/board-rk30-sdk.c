@@ -138,6 +138,55 @@
 #define CONFIG_SENSOR_SVGA_FPS_FIXED_1 15000
 #define CONFIG_SENSOR_720P_FPS_FIXED_1 30000
 
+#define CONFIG_SENSOR_01 RK29_CAM_SENSOR_GC2035                      // back camera sensor
+#define CONFIG_SENSOR_IIC_ADDR_01            0x78                    /* physical 0x3C         */
+#define CONFIG_SENSOR_IIC_ADAPTER_ID_01      3
+#define CONFIG_SENSOR_CIF_INDEX_01           0
+#define CONFIG_SENSOR_ORIENTATION_01         90
+#define CONFIG_SENSOR_POWER_PIN_01           INVALID_GPIO
+#define CONFIG_SENSOR_RESET_PIN_01           INVALID_GPIO
+#define CONFIG_SENSOR_POWERDN_PIN_01         RK30_PIN1_PB7//RK30_PIN1_PD6
+#define CONFIG_SENSOR_FALSH_PIN_01           RK30_PIN4_PD6//INVALID_GPIO
+#define CONFIG_SENSOR_POWERACTIVE_LEVEL_01   RK29_CAM_POWERACTIVE_L
+#define CONFIG_SENSOR_RESETACTIVE_LEVEL_01   RK29_CAM_RESETACTIVE_L
+#define CONFIG_SENSOR_POWERDNACTIVE_LEVEL_01 RK29_CAM_POWERDNACTIVE_H
+#define CONFIG_SENSOR_FLASHACTIVE_LEVEL_01   RK29_CAM_FLASHACTIVE_H
+#define CONFIG_SENSOR_TORCHACTIVE_LEVEL_01   RK29_CAM_FLASHACTIVE_H
+
+#define CONFIG_SENSOR_QCIF_FPS_FIXED_01      15000
+#define CONFIG_SENSOR_240X160_FPS_FIXED_01   15000
+#define CONFIG_SENSOR_QVGA_FPS_FIXED_01      15000
+#define CONFIG_SENSOR_CIF_FPS_FIXED_01       15000
+#define CONFIG_SENSOR_VGA_FPS_FIXED_01       15000
+#define CONFIG_SENSOR_480P_FPS_FIXED_01      15000
+#define CONFIG_SENSOR_SVGA_FPS_FIXED_01      15000
+#define CONFIG_SENSOR_720P_FPS_FIXED_01      30000
+
+#define CONFIG_SENSOR_11 RK29_CAM_SENSOR_GC2035                      /* front camera sensor 0 */
+#define CONFIG_SENSOR_IIC_ADDR_11            0x78                    /* physical 0x3C         */
+#define CONFIG_SENSOR_IIC_ADAPTER_ID_11      3
+#define CONFIG_SENSOR_CIF_INDEX_11           0
+#define CONFIG_SENSOR_ORIENTATION_11         270
+#define CONFIG_SENSOR_POWER_PIN_11           INVALID_GPIO
+#define CONFIG_SENSOR_RESET_PIN_11           INVALID_GPIO
+#define CONFIG_SENSOR_POWERDN_PIN_11         RK30_PIN1_PD6
+#define CONFIG_SENSOR_FALSH_PIN_11           INVALID_GPIO
+#define CONFIG_SENSOR_POWERACTIVE_LEVEL_11   RK29_CAM_POWERACTIVE_L
+#define CONFIG_SENSOR_RESETACTIVE_LEVEL_11   RK29_CAM_RESETACTIVE_L
+#define CONFIG_SENSOR_POWERDNACTIVE_LEVEL_11 RK29_CAM_POWERDNACTIVE_H
+#define CONFIG_SENSOR_FLASHACTIVE_LEVEL_11   RK29_CAM_FLASHACTIVE_L
+#define CONFIG_SENSOR_TORCHACTIVE_LEVEL_11   RK29_CAM_FLASHACTIVE_L
+
+#define CONFIG_SENSOR_QCIF_FPS_FIXED_11      15000
+#define CONFIG_SENSOR_240X160_FPS_FIXED_11   15000
+#define CONFIG_SENSOR_QVGA_FPS_FIXED_11      15000
+#define CONFIG_SENSOR_CIF_FPS_FIXED_11       15000
+#define CONFIG_SENSOR_VGA_FPS_FIXED_11       15000
+#define CONFIG_SENSOR_480P_FPS_FIXED_11      15000
+#define CONFIG_SENSOR_SVGA_FPS_FIXED_11      15000
+#define CONFIG_SENSOR_720P_FPS_FIXED_11      30000
+
+
 #endif  //#ifdef CONFIG_VIDEO_RK29
 /*---------------- Camera Sensor Configuration Macro End------------------------*/
 #include "../../../drivers/media/video/rk30_camera.c"
@@ -270,7 +319,7 @@ static struct reginfo_t rk_init_data_sensor_winseqreg_1[] =
        {0x0000, 0x00,0,0}
 };
 #endif
-/*#if CONFIG_SENSOR_IIC_ADDR_01
+#if CONFIG_SENSOR_IIC_ADDR_01
 static struct reginfo_t rk_init_data_sensor_reg_01[] =
 {
     {0x0000, 0x00,0,0}
@@ -280,7 +329,7 @@ static struct reginfo_t rk_init_data_sensor_winseqreg_01[] =
        {0x0000, 0x00,0,0}
 };
 #endif
-#if CONFIG_SENSOR_IIC_ADDR_02
+/*#if CONFIG_SENSOR_IIC_ADDR_02
 static struct reginfo_t rk_init_data_sensor_reg_02[] =
 {
     {0x0000, 0x00,0,0}
@@ -359,7 +408,7 @@ static struct reginfo_t rk_init_data_sensor_winseqreg_09[] =
 {
        {0x0000, 0x00,0,0}
 };
-#endif
+#endif*/
 #if CONFIG_SENSOR_IIC_ADDR_11
 static struct reginfo_t rk_init_data_sensor_reg_11[] =
 {
@@ -370,7 +419,7 @@ static struct reginfo_t rk_init_data_sensor_winseqreg_11[] =
        {0x0000, 0x00,0,0}
 };
 #endif
-#if CONFIG_SENSOR_IIC_ADDR_12
+/*#if CONFIG_SENSOR_IIC_ADDR_12
 static struct reginfo_t rk_init_data_sensor_reg_12[] =
 {
     {0x0000, 0x00,0,0}
@@ -498,7 +547,7 @@ static rk_sensor_user_init_data_s rk_init_data_sensor[RK_CAM_NUM] =
        .rk_sensor_init_data_size = 0,
     },
     #endif
-    /*#if CONFIG_SENSOR_IIC_ADDR_01
+    #if CONFIG_SENSOR_IIC_ADDR_01
     {
        .rk_sensor_init_width = INVALID_VALUE,
        .rk_sensor_init_height = INVALID_VALUE,
@@ -521,7 +570,7 @@ static rk_sensor_user_init_data_s rk_init_data_sensor[RK_CAM_NUM] =
        .rk_sensor_init_data_size = 0,
     },
     #endif
-    #if CONFIG_SENSOR_IIC_ADDR_02
+    /*#if CONFIG_SENSOR_IIC_ADDR_02
     {
        .rk_sensor_init_width = INVALID_VALUE,
        .rk_sensor_init_height = INVALID_VALUE,
@@ -704,7 +753,7 @@ static rk_sensor_user_init_data_s rk_init_data_sensor[RK_CAM_NUM] =
        .rk_sensor_winseq_size = 0,
        .rk_sensor_init_data_size = 0,
     },
-    #endif
+    #endif*/
     #if CONFIG_SENSOR_IIC_ADDR_11
     {
        .rk_sensor_init_width = INVALID_VALUE,
@@ -728,7 +777,7 @@ static rk_sensor_user_init_data_s rk_init_data_sensor[RK_CAM_NUM] =
        .rk_sensor_init_data_size = 0,
     },
     #endif
-    #if CONFIG_SENSOR_IIC_ADDR_12
+    /*#if CONFIG_SENSOR_IIC_ADDR_12
     {
        .rk_sensor_init_width = INVALID_VALUE,
        .rk_sensor_init_height = INVALID_VALUE,
@@ -1730,7 +1779,8 @@ static struct rk29_bl_info rk29_bl_info = {
 	.bl_ref = PWM_EFFECT_VALUE,
 	.io_init = rk29_backlight_io_init,
 	.io_deinit = rk29_backlight_io_deinit,
-    .min_brightness = 80,
+    	.min_brightness = 50,
+	.pre_div = 20 * 1000,
 	.pwm_suspend = rk29_backlight_pwm_suspend,
 	.pwm_resume = rk29_backlight_pwm_resume,
 };
@@ -3730,15 +3780,16 @@ static struct dvfs_arm_table dvfs_cpu_logic_table[] = {
 };
 #else
 static struct dvfs_arm_table dvfs_cpu_logic_table[] = {
-	{.frequency = 252 * 1000,	.cpu_volt = 1075 * 1000,	.logic_volt = 1125 * 1000},//0.975V/1.000V
-	{.frequency = 504 * 1000,	.cpu_volt = 1100 * 1000,	.logic_volt = 1125 * 1000},//0.975V/1.000V
-	{.frequency = 816 * 1000,	.cpu_volt = 1125 * 1000,	.logic_volt = 1150 * 1000},//1.000V/1.025V
-	{.frequency = 1008 * 1000,	.cpu_volt = 1125 * 1000,	.logic_volt = 1150 * 1000},//1.025V/1.050V
-	{.frequency = 1200 * 1000,	.cpu_volt = 1175 * 1000,	.logic_volt = 1200 * 1000},//1.100V/1.050V
-	{.frequency = 1272 * 1000,	.cpu_volt = 1225 * 1000,	.logic_volt = 1200 * 1000},//1.150V/1.100V
-	{.frequency = 1416 * 1000,	.cpu_volt = 1300 * 1000,	.logic_volt = 1200 * 1000},//1.225V/1.100V
-	//{.frequency = 1512 * 1000,	.cpu_volt = 1350 * 1000,	.logic_volt = 1250 * 1000},//1.300V/1.150V
-	//{.frequency = 1608 * 1000,	.cpu_volt = 1425 * 1000,	.logic_volt = 1300 * 1000},//1.325V/1.175V
+{.frequency = 126 * 1000, .cpu_volt = 1050 * 1000, .logic_volt = 1125 * 1000},//0.975V/1.000V
+{.frequency = 252 * 1000, .cpu_volt = 1075 * 1000, .logic_volt = 1125 * 1000},//0.975V/1.000V
+{.frequency = 504 * 1000, .cpu_volt = 1100 * 1000, .logic_volt = 1125 * 1000},//0.975V/1.000V
+{.frequency = 816 * 1000, .cpu_volt = 1125 * 1000, .logic_volt = 1150 * 1000},//1.000V/1.025V
+{.frequency = 1008 * 1000, .cpu_volt = 1125 * 1000, .logic_volt = 1150 * 1000},//1.025V/1.050V
+{.frequency = 1200 * 1000, .cpu_volt = 1175 * 1000, .logic_volt = 1200 * 1000},//1.100V/1.050V
+{.frequency = 1272 * 1000, .cpu_volt = 1225 * 1000, .logic_volt = 1200 * 1000},//1.150V/1.100V
+{.frequency = 1416 * 1000, .cpu_volt = 1300 * 1000, .logic_volt = 1200 * 1000},//1.225V/1.100V
+{.frequency = 1512 * 1000, .cpu_volt = 1350 * 1000, .logic_volt = 1250 * 1000},//1.300V/1.150V
+//{.frequency = 1608 * 1000, .cpu_volt = 1425 * 1000, .logic_volt = 1300 * 1000},//1.325V/1.175V
 	{.frequency = CPUFREQ_TABLE_END},
 };
 #endif
