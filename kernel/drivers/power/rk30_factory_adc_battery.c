@@ -110,8 +110,8 @@ static int batt_table[2*BATT_NUM+6] =
 };
 #define adc_to_voltage(adc_val) ((adc_val * BAT_DEFINE_VALUE * (batt_table[4] +batt_table[5])) / (1024 *batt_table[5]))
 #else
-#define BATT_MAX_VOL_VALUE                              8584              	//Full charge voltage
-#define BATT_ZERO_VOL_VALUE                             6800            	// power down voltage 
+#define BATT_MAX_VOL_VALUE                              8110              	//Full charge voltage
+#define BATT_ZERO_VOL_VALUE                             6920            	// power down voltage 
 #define BATT_NOMAL_VOL_VALUE                          7600                
 
 

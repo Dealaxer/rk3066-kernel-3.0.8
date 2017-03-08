@@ -15,9 +15,10 @@
 /* Base */
 #ifdef CONFIG_RK610_LVDS
 #define OUT_TYPE	    	SCREEN_LVDS
-#define OUT_FORMAT      	LVDS_8BIT_1
+#define OUT_FORMAT      	LVDS_8BIT_2
 #else
-#define OUT_TYPE	    SCREEN_RGB
+#define OUT_TYPE	    	SCREEN_RGB
+#define OUT_FORMAT      	LVDS_8BIT_1
 #endif
 
 #define OUT_FACE	    OUT_D888_P666
