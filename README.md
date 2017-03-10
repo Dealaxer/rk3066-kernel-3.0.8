@@ -14,6 +14,10 @@ CONFIG_CMDLINE_FORCE=y<br>
 <br>
 <strong>How to compile a kernel for Cube U30GT-H</strong>:<br>
 (To build the kernel 3.0.8 Android 4.1, use toolchain with GCC 4.4.3)<br>
+<strong>Install Tools</strong><br>
+Command:<br>
+<i>apt-get install git-core gnupg flex bison gperf libsdl-dev libesd0-dev libwxgtk2.6-dev build-essential zip curl libncurses5-dev zlib1g-dev ia32-libs lib32z1-dev lib32ncurses5-dev gcc-multilib g++-multilib sharutils lzop</i>
+
 Command:<br>
 <i>export ARCH=arm</i><br>
 <i>export CROSS_COMPILE=(<strong>Your Path</strong>)/toolchain/arm-eabi-4.4.3/bin/arm-eabi-</i><br><br>
