@@ -16,7 +16,7 @@ CONFIG_CMDLINE_FORCE=y<br>
 <br>
 <strong>Install Tools</strong><br>
 Command:<br>
-<i>apt-get install git-core gnupg flex bison gperf libsdl-dev libesd0-dev libwxgtk2.6-dev build-essential zip curl libncurses5-dev zlib1g-dev ia32-libs lib32z1-dev lib32ncurses5-dev gcc-multilib g++-multilib sharutils lzop</i><br><br>
+<i>apt-get install git-core gnupg flex bison gperf libsdl1.2-dev libesd0-dev libwxgtk3.0-dev build-essential zip curl libncurses5-dev zlib1g-dev lib32z1-dev lib32ncurses5-dev gcc-multilib g++-multilib sharutils lzop</i><br><br>
 (To build the kernel 3.0.8 Android 4.1, use toolchain with GCC 4.4.3)<br>
 Command:<br>
 <i>export ARCH=arm</i><br>
